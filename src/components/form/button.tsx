@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 import tw, { css } from "twin.macro";
 import { buttonColors, ButtonColor } from "../../utils/color";
