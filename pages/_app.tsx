@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<GlobalStyles />
-			<div tw="antialiased">
+			<div tw="antialiased font-manrope">
 				<Component {...pageProps} />
 			</div>
 		</>
