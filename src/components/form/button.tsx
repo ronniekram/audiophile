@@ -5,9 +5,15 @@ import tw, { css } from "twin.macro";
 import { buttonColors, ButtonColor } from "../../utils/color";
 
 // ========== TYPES ==========
+const sizes = {
+	FIXED: tw`w-40`,
+	FULL: tw`w-full`,
+};
+
 interface ButtonProps {
 	label: string | JSX.Element;
 	color: ButtonColor;
+	size: keyof typeof sizes;
 	type?: `button` | `reset` | `submit`;
 	disabled?: boolean;
 	href?: string;
@@ -16,7 +22,7 @@ interface ButtonProps {
 
 // ========== STYLES ==========
 const styles = css`
-	${tw`w-40 h-12`};
+	${tw`h-12`};
 	${tw`text-xs font-bold`};
 	${tw`letter-spacing[1px]`};
 	${tw`flex items-center justify-center`};
@@ -24,11 +30,11 @@ const styles = css`
 `;
 
 // ========== COMPONENTS ==========
-const Button = ({ label, color, type, disabled, href, onClick }: ButtonProps) => {
+const Button = ({ label, color, size, type, disabled, href, onClick }: ButtonProps) => {
 	if (href) {
 		return (
 			<Link href={href} passHref>
-				<a css={[styles, buttonColors[color]]}>{label}</a>
+				<a css={[styles, buttonColors[color], sizes[size]]}>{label}</a>
 			</Link>
 		);
 	}
@@ -37,7 +43,7 @@ const Button = ({ label, color, type, disabled, href, onClick }: ButtonProps) =>
 			type={type || `button`}
 			disabled={disabled}
 			onClick={onClick}
-			css={[styles, buttonColors[color]]}
+			css={[styles, buttonColors[color], sizes[size]]}
 		>
 			{label}
 		</button>

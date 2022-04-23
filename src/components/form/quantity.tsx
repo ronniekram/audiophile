@@ -5,6 +5,6 @@ import tw, { styled } from "twin.macro";
 // ========== STYLES ==========
 
 // ========== COMPONENTS ==========
-const Count = () => {};
+const Quantity = () => {};
 
-export default Count;
+export default Quantity;
