@@ -3,6 +3,7 @@
 import Link from "next/link";
 import tw, { css } from "twin.macro";
 import { buttonColors, ButtonColor } from "../../utils/color";
+import Ellipsis from "../misc/ellipsis";
 
 // ========== TYPES ==========
 const sizes = {
@@ -18,6 +19,7 @@ interface ButtonProps {
 	disabled?: boolean;
 	href?: string;
 	onClick?: () => void;
+	isLoading?: boolean;
 }
 
 // ========== STYLES ==========
@@ -31,7 +33,7 @@ const styles = css`
 `;
 
 // ========== COMPONENTS ==========
-const Button = ({ label, color, size, type, disabled, href, onClick }: ButtonProps) => {
+const Button = ({ label, color, size, type, disabled, href, onClick, isLoading }: ButtonProps) => {
 	if (href) {
 		return (
 			<Link href={href} passHref>
@@ -46,7 +48,7 @@ const Button = ({ label, color, size, type, disabled, href, onClick }: ButtonPro
 			onClick={onClick}
 			css={[styles, buttonColors[color], sizes[size]]}
 		>
-			{label}
+			{isLoading ? <Ellipsis /> : label}
 		</button>
 	);
 };
