@@ -3,23 +3,31 @@ import Button from "../form/button";
 
 // ========== STYLES ==========
 const Container = styled.div`
-	background-image: url("/images/index/hero-sm.jpg");
-	background-position: center;
+	background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+		url("/images/index/hero-sm.jpg");
+	background-position: bottom center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-origin: content-box;
 
 	@media (min-width: 768px) {
-		background-image: url("/images/index/hero-md.jpg");
+		background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+			url("/images/index/hero-md.jpg");
+		background-size: cover;
+		background-position: bottom center;
 	}
 
 	@media (min-width: 1280px) {
-		background-image: url("/images/index/hero-lg.jpg");
+		background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+			url("/images/index/hero-lg.jpg");
+		background-position: bottom right;
+		background-size: cover;
 	}
 
 	${tw`flex items-center justify-center`};
 	${tw`height[31.875rem] w-full`};
 	${tw`md:(height[39.9375rem])`};
-	${tw`xl:(justify-start)`};
+	${tw`xl:(height[42.1875rem] justify-start)`};
 `;
 
 const Content = styled.div`
@@ -34,13 +42,13 @@ const Content = styled.div`
 	}
 
 	h2 {
-		${tw`text-grey-100 text-base font-medium`};
+		${tw`text-grey-200 text-base font-medium`};
 		${tw`line-height[25px] my-6`};
 		${tw`md:(mb-10 mt-6)`};
 	}
 
 	p {
-		${tw`text-grey-100 text-sm uppercase`};
+		${tw`text-grey-200 text-sm uppercase`};
 		${tw`line-height[19.12px] letter-spacing[10px] mb-4`};
 		${tw`md:(mb-6)`};
 	}

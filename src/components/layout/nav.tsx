@@ -14,7 +14,7 @@ const Container = styled.nav`
 	${tw`px-6 py-8 md:(px-10)`};
 `;
 
-const Anchor = tw.a`uppercase text-xs letter-spacing[2px] md:(mr-8)`;
+const Anchor = tw.a`uppercase text-xs letter-spacing[2px] md:(mr-8) transition duration-200 ease-in-out hover:(text-orange)`;
 // ========== COMPONENTS ==========
 const Nav = () => {
 	const [open, setOpen] = useState<boolean>(false);
@@ -31,19 +31,21 @@ const Nav = () => {
 					>
 						{open ? <FaTimes /> : <FaBars />}
 					</button>
-					<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
+					<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25} />
 				</div>
-        <div tw="w-1/3 flex justify-end">
-          <Link href="/cart" passHref>
-            <a tw="cursor-pointer" aria-describedby="Go to cart">
-              <span><BsCart3 /></span>
-            </a>
-          </Link>
-        </div>
+				<div tw="flex justify-end w-1/3">
+					<Link href="/cart" passHref>
+						<a tw="cursor-pointer" aria-describedby="Go to cart">
+							<span>
+								<BsCart3 />
+							</span>
+						</a>
+					</Link>
+				</div>
 			</div>
 
-			<div tw="xl:(flex items-center justify-between) hidden width[69.375rem] mx-auto">
-				<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
+			<div tw="hidden xl:(items-center mx-auto flex justify-between width[69.375rem])">
+				<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25} />
 
 				<ul>
 					<Link href="/" passHref>

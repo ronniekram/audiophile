@@ -19,7 +19,7 @@ const Container = styled.footer`
 	}
 `;
 
-const Anchor = tw.a`uppercase text-xs letter-spacing[2px] mb-4 md:(mr-8)`;
+const Anchor = tw.a`uppercase text-xs letter-spacing[2px] mb-4 md:(mr-8) transition duration-200 ease-in-out hover:(text-orange)`;
 
 // ========== COMPONENTS ==========
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
 		<Container>
 			<div>
 				<div tw="xl:(h-[6.25rem] flex items-end justify-between)">
-          <div tw="h-[6.25rem] flex flex-col justify-between items-center mx-auto mb-14 md:(mx-0 mb-0 items-start)">
+          <div tw="md:(mx-0 mb-0 items-start) h-[6.25rem] flex flex-col justify-between items-center mx-auto mb-14">
             <div tw="width[6.3125rem] h-1 bg-orange" />
             <Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
           </div>
