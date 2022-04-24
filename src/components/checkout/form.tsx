@@ -46,7 +46,7 @@ const CheckoutForm = ({ cart, grand }: { cart: Item[]; grand: number }) => {
 	const {
 		handleSubmit,
 		register,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm<FormValues>();
 
 	const onSubmit = (data: FormValues) => {
@@ -167,7 +167,13 @@ const CheckoutForm = ({ cart, grand }: { cart: Item[]; grand: number }) => {
 							</>
 						)}
 					</fieldset>
-					<Button label="Continue & Pay" color="orange" size="FULL" type="submit" />
+					<Button
+						label="Continue & Pay"
+						color="orange"
+						size="FULL"
+						type="submit"
+						isLoading={isSubmitting}
+					/>
 				</form>
 			</Container>
 			{open && (
