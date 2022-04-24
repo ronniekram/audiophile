@@ -31,7 +31,7 @@ const Nav = () => {
 					>
 						{open ? <FaTimes /> : <FaBars />}
 					</button>
-					<Image src="/images/logo.svg" />
+					<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
 				</div>
 				<Link href="/cart" passHref>
 					<a tw="cursor-pointer" aria-describedby="Go to cart">
@@ -41,7 +41,7 @@ const Nav = () => {
 			</div>
 
 			<div tw="xl:(flex items-center justify-between) hidden width[69.375rem] mx-auto">
-				<Image src="/images/logo.svg" alt="Audiophile logo" />
+				<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
 
 				<ul>
 					<Link href="/" passHref>
