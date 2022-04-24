@@ -22,7 +22,7 @@ const Nav = () => {
 	return (
 		<Container>
 			<div tw="xl:(hidden) flex items-center justify-between">
-				<div tw="md:(justify-start) flex items-center justify-between w-full">
+				<div tw="md:(justify-start) flex items-center justify-between w-2/3">
 					<button
 						type="button"
 						onClick={() => setOpen(!open)}
@@ -33,11 +33,13 @@ const Nav = () => {
 					</button>
 					<Image src="/images/logo.svg" alt="Audiophile logo" width={143} height={25}  />
 				</div>
-				<Link href="/cart" passHref>
-					<a tw="cursor-pointer" aria-describedby="Go to cart">
-						<BsCart3 />
-					</a>
-				</Link>
+        <div tw="w-1/3 flex justify-end">
+          <Link href="/cart" passHref>
+            <a tw="cursor-pointer" aria-describedby="Go to cart">
+              <span><BsCart3 /></span>
+            </a>
+          </Link>
+        </div>
 			</div>
 
 			<div tw="xl:(flex items-center justify-between) hidden width[69.375rem] mx-auto">
