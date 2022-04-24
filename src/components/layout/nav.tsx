@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import Image from "next/image";
@@ -13,7 +14,7 @@ const Container = styled.nav`
 	${tw`px-6 py-8 md:(px-10)`};
 `;
 
-const Anchor = tw.a`uppercase text-xs letter-spacing[2px] mb-4 md:(mr-8)`;
+const Anchor = tw.a`uppercase text-xs letter-spacing[2px] md:(mr-8)`;
 // ========== COMPONENTS ==========
 const Nav = () => {
 	const [open, setOpen] = useState<boolean>(false);

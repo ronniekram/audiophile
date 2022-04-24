@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 import tw, { css } from "twin.macro";
+import { HiChevronRight } from "react-icons/hi";
 import { buttonColors, ButtonColor } from "../../utils/color";
 import Ellipsis from "../misc/ellipsis";
 
@@ -34,10 +35,28 @@ const styles = css`
 
 // ========== COMPONENTS ==========
 const Button = ({ label, color, size, type, disabled, href, onClick, isLoading }: ButtonProps) => {
+	const shopLabel = isLoading ? (
+		<Ellipsis />
+	) : (
+		<div tw="flex items-center">
+			{` `}
+			<p>{label}</p>
+			{` `}
+			<span tw="ml-3 text-orange">
+				<HiChevronRight />
+				{` `}
+			</span>
+		</div>
+	);
+
+	const regLabel = isLoading ? <Ellipsis /> : label;
+
 	if (href) {
 		return (
 			<Link href={href} passHref>
-				<a css={[styles, buttonColors[color], sizes[size]]}>{label}</a>
+				<a css={[styles, buttonColors[color], sizes[size]]}>
+					{color === `shop` ? shopLabel : regLabel}
+				</a>
 			</Link>
 		);
 	}
@@ -48,7 +67,7 @@ const Button = ({ label, color, size, type, disabled, href, onClick, isLoading }
 			onClick={onClick}
 			css={[styles, buttonColors[color], sizes[size]]}
 		>
-			{isLoading ? <Ellipsis /> : label}
+			{color === `shop` ? shopLabel : regLabel}
 		</button>
 	);
 };
