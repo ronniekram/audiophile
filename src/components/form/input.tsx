@@ -17,6 +17,7 @@ const Label = styled.label`
 `;
 
 const Field = styled.input`
+	${tw`transition duration-300 ease-out`};
 	${tw`w-[17.5rem] md:(w-[19.3125rem])`};
 	${tw`h-[3.5rem]`};
 	${tw`py-[1.125rem] px-6`};
