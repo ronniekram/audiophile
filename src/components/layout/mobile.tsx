@@ -28,7 +28,7 @@ const MenuItem = ({ image, href, label }: { image: string; href: string; label: 
 	return (
 		<Item>
 			<div tw="-mt-14">
-				<Image src={image} alt={`Shop ${label}`} />
+				<Image src={image} alt={`Shop ${label}`} placeholder="blur" layout="fill" />
 			</div>
 
 			<p tw="mb-4 mt-8">{label}</p>

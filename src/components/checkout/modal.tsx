@@ -66,7 +66,7 @@ const Modal = ({ items, grandTotal }: ModalProps) => {
 
 	return (
 		<Container>
-			<p tw="text-6xl mb-6 text-orange">
+			<p tw="mb-6 text-orange text-6xl">
 				<BsCheck />
 			</p>
 			<h1>Thank you for your order</h1>
@@ -77,7 +77,7 @@ const Modal = ({ items, grandTotal }: ModalProps) => {
 					{numItems > 0 && (
 						<>
 							<div tw="w-full h-px bg-black opacity-50" />
-							<p tw="text-2xs line-height[16.5px] letter-spacing[-0.21px] mt-3 font-bold">
+							<p tw="line-height[16.5px] letter-spacing[-0.21px] mt-3 text-2xs font-bold">
 								and {numItems} other item(s)
 							</p>
 						</>

@@ -31,7 +31,7 @@ const CartItem = ({ image, name, price }: CartItemProps) => {
 	return (
 		<Container>
 			<div>
-				<Image src={image} className="image" />
+				<Image src={image} className="image" placeholder="blur" layout="fill" />
 			</div>
 			<div tw="line-height[25px] flex items-center justify-between text-black text-base font-bold">
 				<div>
