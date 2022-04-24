@@ -13,6 +13,7 @@ export type Item = {
 const Container = styled.div`
 	${tw`flex items-center w-full`};
 	${tw`w-full rounded-lg`};
+	${tw`mb-6`};
 
 	.image {
 		${tw`w-16 h-16`};
