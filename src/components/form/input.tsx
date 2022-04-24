@@ -30,7 +30,7 @@ const Field = styled.input`
 // ========== COMPONENTS ==========
 const Input = ({ label, name, type, placeholder, register, errors, disabled }: InputProps) => {
 	return (
-		<fieldset>
+		<div tw="mb-6">
 			<div
 				tw="text-2xs flex items-center justify-between mb-2"
 				css={[errors ? tw`text-red` : tw`text-black`]}
@@ -48,7 +48,7 @@ const Input = ({ label, name, type, placeholder, register, errors, disabled }: I
 					errors ? tw`border-2 border-red` : tw`border-[#CFCFCF] border active:(border-orange)`,
 				]}
 			/>
-		</fieldset>
+		</div>
 	);
 };
 

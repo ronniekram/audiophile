@@ -1,22 +1,24 @@
+/* eslint-disable import/no-cycle */
 import { Dispatch, SetStateAction } from "react";
 import tw, { styled } from "twin.macro";
+import { Payment } from "../checkout/form";
 
 // ========== TYPES ==========
 interface RadioProps {
 	label: string;
 	name: string;
-	value: string;
-	selected: string | null;
-	setSelected: Dispatch<SetStateAction<string | null>>;
+	value: Payment;
+	selected: Payment;
+	setSelected: Dispatch<SetStateAction<Payment>>;
 	register?: any;
 }
 
 // ========== STYLES ==========
-const FieldSet = styled.fieldset`
+const Container = styled.div`
 	${tw`transition duration-300 ease-out`};
 	${tw`w-[17.5rem] md:(w-[19.3125rem])`};
 	${tw`h-[3.5rem]`};
-	${tw`py-[1.125rem] px-6`};
+	${tw`py-[1.125rem] mb-6 px-6`};
 	${tw`flex items-center`};
 	${tw`rounded-lg`};
 	${tw`text-black text-sm font-bold`};
@@ -56,7 +58,7 @@ const Button = styled.input`
 // ========== COMPONENTS ==========
 const Radio = ({ label, name, value, selected, setSelected, register }: RadioProps) => {
 	return (
-		<FieldSet css={[selected === value ? tw`border-orange` : tw`border-[#CFCFCF]`]}>
+		<Container css={[selected === value ? tw`border-orange` : tw`border-[#CFCFCF]`]}>
 			<Label>
 				<Button
 					type="radio"
@@ -66,7 +68,7 @@ const Radio = ({ label, name, value, selected, setSelected, register }: RadioPro
 				/>
 			</Label>
 			<p>{label}</p>
-		</FieldSet>
+		</Container>
 	);
 };
 
