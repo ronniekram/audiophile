@@ -23,10 +23,11 @@ interface ButtonProps {
 // ========== STYLES ==========
 const styles = css`
 	${tw`h-12`};
-	${tw`text-xs font-bold`};
+	${tw`text-xs font-bold uppercase`};
 	${tw`letter-spacing[1px]`};
 	${tw`flex items-center justify-center`};
 	${tw`transition duration-300 ease-in-out`};
+	${tw`cursor-pointer`};
 `;
 
 // ========== COMPONENTS ==========
