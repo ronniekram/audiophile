@@ -1,6 +1,13 @@
 import tw, { styled } from "twin.macro";
 import CartItem, { Item } from "./item";
 
+// ========== TYPES ==========
+interface SummaryProps {
+	items: Item[];
+	total: number;
+	tax: number;
+	grand: number;
+}
 // ========== STYLES ==========
 const Container = styled.div`
 	${tw`text-black bg-white`};
@@ -29,13 +36,13 @@ const LineItem = styled.li`
 	}
 `;
 // ========== COMPONENTS ==========
-const Summary = ({ items }: { items: Item[] }) => {
-	const total = items
-		.map((item) => item.price * item.quantity)
-		.reduce((prev, current) => prev + current);
+const Summary = ({ items, total, tax, grand }: SummaryProps) => {
+	// const total = items
+	// 	.map((item) => item.price * item.quantity)
+	// 	.reduce((prev, current) => prev + current);
 
-	const tax = total * 0.2;
-	const grand = total + tax + 50;
+	// const tax = total * 0.2;
+	// const grand = total + tax + 50;
 
 	return (
 		<Container>
