@@ -15,6 +15,7 @@ module.exports = {
 			transparent: `transparent`,
 		},
 		fontSize: {
+			"2xs": `12px`,
 			"xs": `13px`,
 			"sm": `14px`,
 			"base": `15px`,
